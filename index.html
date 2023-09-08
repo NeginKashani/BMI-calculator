@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(70, 251, 252, 1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            height: 450px;
+            border: 1px solid rgb(46, 44, 44);
+            border-radius: 10px;
+            background-color: black;
+            color: aliceblue;
+            box-shadow: 5px 5px 10px rgb(143, 52, 228),
+                -5px -5px 10px rgb(159, 85, 227);
+
+
+        }
+
+        .container h1 {
+            color: rgb(58, 195, 195);
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .container label {
+            font-size: 25px;
+            font-family: cursive;
+            margin-left: 35px;
+        }
+
+        .container input {
+            font-size: 25px;
+            margin-left: 35px;
+            color: blueviolet;
+            background-color: aquamarine;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgb(195, 140, 247),
+                -2px -2px 8px rgb(219, 184, 253);
+        }
+
+        .container input:focus {
+            color: rgb(0, 21, 255);
+
+        }
+
+        .container button {
+            font-weight: bold;
+            font-size: 18px;
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 150px;
+            background-color: rgb(94, 87, 87);
+            color: rgb(55, 255, 225);
+            box-shadow: 2px 2px 8px rgb(143, 52, 228),
+                -2px -2px 8px rgb(159, 85, 227);
+        }
+
+        .boxoftext {
+            width: 250px;
+            height: 100px;
+            /* border:1px solid red; */
+            color: rgb(28, 236, 219);
+            margin-left: 80px;
+            margin-top: 10px;
+
+        }
+
+        .boxoftext>* {
+            font-size: 20px;
+            margin: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>Calculate of BMI</h1>
+            <label for="weight">Weight (KG)</label>
+            <br><br>
+            <input id="weight" type="numbers">
+            <br><br>
+            <label for="height">Height (CM)</label>
+            <br><br>
+            <input id="height" type="numbers">
+            <br><br><br>
+            <button onclick="calculateofBMI()">Submit</button>
+            <div class="boxoftext">
+                <h3 id="textofBMI"></h3>
+                <p id="output"></p>
+                <p id="hint"></p>
+            </div>
+        </div>
+    </main>
+
+</body>
+<script>
+
+    function calculateofBMI() {
+        let _weight = new Number(document.getElementById('weight').value)
+        let _height = new Number(document.getElementById('height').value)
+        let BMI = parseInt(_weight / (_height * _height) * 10000)
+        console.log(BMI);
+        document.getElementById('textofBMI').innerHTML = 'Your BMI is :'
+        document.getElementById('output').innerHTML = BMI
+        if (BMI < 18) {
+            document.getElementById('hint').innerHTML = 'You are in Under Weight'
+        } else if ((BMI >= 18) && (BMI < 25)) {
+            document.getElementById('hint').innerHTML = 'You are in Healthy Weight'
+        } else {
+            document.getElementById('hint').innerHTML = 'You are in Over Weight'
+        }
+
+    }
+
+
+</script>
+
+</html>
