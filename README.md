@@ -1,7 +1,7 @@
 # BMI-calculator
 
 
-- [Demo Project]()
+- [Demo Project](https://neginkashani.github.io/BMI-calculator/)
 
 - Developed by Negin Kashani
 
