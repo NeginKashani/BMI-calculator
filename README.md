@@ -1,4 +1,5 @@
 # BMI-calculator
+![bmi](https://github.com/NeginKashani/BMI-calculator/assets/109550062/020622be-0226-4989-9cb2-9fb35c692b15)
 
 
 - [Demo Project](https://neginkashani.github.io/BMI-calculator/)
